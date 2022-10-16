@@ -1,0 +1,67 @@
+Table dosen {
+  id int [pk]
+  nip varchar
+  nidn varchar
+  nama varchar
+  jabatan varchar
+  email varchar
+}
+
+Table mahasiswa {
+  id int [pk]
+  nim varchar
+  nama varchar
+  tempat_lahir varchar
+  tanggal_lahir date
+  email varchar
+  fakultas varchar
+  prodi varchar
+  alamat text
+}
+
+Table matakuliah {
+  id int [pk]
+  kode varchar
+  nama varchar
+  dosen varchar
+  sks date
+}
+
+Table prodi {
+  id_prodi int [pk]
+  nama_prodi varchar
+}
+
+Table fakultas {
+  id_fakultas int [pk]
+  nama_fakultas varchar
+}
+
+
+Table jabatan {
+  id_jabatan int [pk]
+  nama_jabatan varchar
+}
+
+Table provinsi {
+  id_provinsi int [pk]
+  nama_provinsi varchar
+  nama_kota varchar
+}
+
+Table sks {
+  id_sks date [pk]
+  jumlah_sks date
+}
+
+
+
+Ref: "prodi"."id_prodi" < "mahasiswa"."prodi"
+
+Ref: "fakultas"."id_fakultas" < "mahasiswa"."fakultas"
+
+Ref: "provinsi"."id_provinsi" < "mahasiswa"."tempat_lahir"
+
+Ref: "jabatan"."id_jabatan" < "dosen"."jabatan"
+
+Ref: "sks"."id_sks" < "matakuliah"."sks"

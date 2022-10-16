@@ -1,0 +1,30 @@
+{% block content %}
+
+    <center>
+        <h2>DAFTAR MATA KULIAH PENDIDIKAN MATEMATIKA</h2>
+        <h2>UNIVERSITAS SULTAN AGENG TIRTAYASA</h2>
+        <h2>TAHUN 2022-2023</h2>
+    </center>
+    <table border="1">
+        <tr>
+            <th>NO</th>
+            <th>KODE</th>
+            <th>NAMA MATA KULIAH</th>
+            <th>DOSEN PENGAMPU</th>
+            <th>JUMLAH SKS</th>
+        </tr>
+
+    {% for post in posts %}
+    
+        <tr>
+            <td>{{matakuliah.kode}}</td>
+            <td>{{matakuliah.nama}}</td>
+            <td>{{matakuliah.dosen}}</td>
+            <td>{{matakuliah.sks}}</td>
+        </tr>
+        {% endfor %}
+    
+    </table>
+
+
+{% endblock %}
